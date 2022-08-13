@@ -1,11 +1,24 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DetectColider : MonoBehaviour
 {
-    private void OnCollisionEnter2D(Collision2D collision)
+    public bool openSence = false;
+
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("Triggered");
+        if (other.tag == "Door")
+        { 
+            openSence = true;
+        }
+    }
+    private void Update()
+    {
+       if(openSence && Input.GetKey(KeyCode.P))
+        {
+            SceneManager.LoadScene(1);
+        }
     }
 }
