@@ -19,6 +19,11 @@ public class DetectColider : MonoBehaviour
         {
             Debug.Log("Can talk");
         }
+        if(other.tag == "Coin")
+        {
+            Debug.Log("Collect");
+            Destroy(other.gameObject);
+        }
 
     }
     private void OnTriggerStay2D(Collider2D other)
