@@ -9,7 +9,7 @@ public class DetectColider : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "Door")
+        if (other.tag == "Door" || other.tag == "Return")
         { 
             openSence = true;
         }
