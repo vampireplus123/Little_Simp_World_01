@@ -15,6 +15,10 @@ public class DetectColider : MonoBehaviour
             Debug.Log("Can pass");
             openSence = true;
         }
+        if (other.tag == "Shopkeeper" )
+        {
+            Debug.Log("Can talk");
+        }
 
     }
     private void OnTriggerStay2D(Collider2D other)
